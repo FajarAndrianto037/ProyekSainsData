@@ -306,12 +306,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-modul-twint">
+   1. Install Modul Twint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-library-twint">
+   2. Import Library Twint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crawling-data-twitter-dengan-twint">
+   3. Crawling data twitter dengan Twint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#export-to-csv">
+   4.Export To CSV
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -323,6 +362,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-modul-twint">
+   1. Install Modul Twint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-library-twint">
+   2. Import Library Twint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crawling-data-twitter-dengan-twint">
+   3. Crawling data twitter dengan Twint
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#export-to-csv">
+   4.Export To CSV
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -332,6 +399,477 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="crawling-twitter">
 <h1>Crawling Twitter<a class="headerlink" href="#crawling-twitter" title="Permalink to this headline">#</a></h1>
+<div class="section" id="install-modul-twint">
+<h2>1. Install Modul Twint<a class="headerlink" href="#install-modul-twint" title="Permalink to this headline">#</a></h2>
+<blockquote>
+<div><p>Pemblokiran indentasi</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/twintproject/twint.git
+<span class="o">!</span><span class="nb">cd</span> /content/twint <span class="o">&amp;&amp;</span> pip3 install . -r requirements.txt
+<span class="o">!</span>pip install <span class="nv">aiohttp</span><span class="o">==</span><span class="m">3</span>.7.0
+<span class="o">!</span>pip install nest_asyncio
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;twint&#39;...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remote: Enumerating objects: 47, done.
+remote: Counting objects:   2% (1/47)
+remote: Counting objects:   4% (2/47)
+remote: Counting objects:   6% (3/47)
+remote: Counting objects:   8% (4/47)
+remote: Counting objects:  10% (5/47)
+remote: Counting objects:  12% (6/47)
+remote: Counting objects:  14% (7/47)
+remote: Counting objects:  17% (8/47)
+remote: Counting objects:  19% (9/47)
+remote: Counting objects:  21% (10/47)
+remote: Counting objects:  23% (11/47)
+remote: Counting objects:  25% (12/47)
+remote: Counting objects:  27% (13/47)
+remote: Counting objects:  29% (14/47)
+remote: Counting objects:  31% (15/47)
+remote: Counting objects:  34% (16/47)
+remote: Counting objects:  36% (17/47)
+remote: Counting objects:  38% (18/47)
+remote: Counting objects:  40% (19/47)
+remote: Counting objects:  42% (20/47)
+remote: Counting objects:  44% (21/47)
+remote: Counting objects:  46% (22/47)
+remote: Counting objects:  48% (23/47)
+remote: Counting objects:  51% (24/47)
+remote: Counting objects:  53% (25/47)
+remote: Counting objects:  55% (26/47)
+remote: Counting objects:  57% (27/47)
+remote: Counting objects:  59% (28/47)
+remote: Counting objects:  61% (29/47)
+remote: Counting objects:  63% (30/47)
+remote: Counting objects:  65% (31/47)
+remote: Counting objects:  68% (32/47)
+remote: Counting objects:  70% (33/47)
+remote: Counting objects:  72% (34/47)
+remote: Counting objects:  74% (35/47)
+remote: Counting objects:  76% (36/47)
+remote: Counting objects:  78% (37/47)
+remote: Counting objects:  80% (38/47)
+remote: Counting objects:  82% (39/47)
+remote: Counting objects:  85% (40/47)
+remote: Counting objects:  87% (41/47)
+remote: Counting objects:  89% (42/47)
+remote: Counting objects:  91% (43/47)
+remote: Counting objects:  93% (44/47)
+remote: Counting objects:  95% (45/47)
+remote: Counting objects:  97% (46/47)
+remote: Counting objects: 100% (47/47)
+remote: Counting objects: 100% (47/47), done.
+remote: Compressing objects:   2% (1/44)
+remote: Compressing objects:   4% (2/44)
+remote: Compressing objects:   6% (3/44)
+remote: Compressing objects:   9% (4/44)
+remote: Compressing objects:  11% (5/44)
+remote: Compressing objects:  13% (6/44)
+remote: Compressing objects:  15% (7/44)
+remote: Compressing objects:  18% (8/44)
+remote: Compressing objects:  20% (9/44)
+remote: Compressing objects:  22% (10/44)
+remote: Compressing objects:  25% (11/44)
+remote: Compressing objects:  27% (12/44)
+remote: Compressing objects:  29% (13/44)
+remote: Compressing objects:  31% (14/44)
+remote: Compressing objects:  34% (15/44)
+remote: Compressing objects:  36% (16/44)
+remote: Compressing objects:  38% (17/44)
+remote: Compressing objects:  40% (18/44)
+remote: Compressing objects:  43% (19/44)
+remote: Compressing objects:  45% (20/44)
+remote: Compressing objects:  47% (21/44)
+remote: Compressing objects:  50% (22/44)
+remote: Compressing objects:  52% (23/44)
+remote: Compressing objects:  54% (24/44)
+remote: Compressing objects:  56% (25/44)
+remote: Compressing objects:  59% (26/44)
+remote: Compressing objects:  61% (27/44)
+remote: Compressing objects:  63% (28/44)
+remote: Compressing objects:  65% (29/44)
+remote: Compressing objects:  68% (30/44)
+remote: Compressing objects:  70% (31/44)
+remote: Compressing objects:  72% (32/44)
+remote: Compressing objects:  75% (33/44)
+remote: Compressing objects:  77% (34/44)
+remote: Compressing objects:  79% (35/44)
+remote: Compressing objects:  81% (36/44)
+remote: Compressing objects:  84% (37/44)
+remote: Compressing objects:  86% (38/44)
+remote: Compressing objects:  88% (39/44)
+remote: Compressing objects:  90% (40/44)
+remote: Compressing objects:  93% (41/44)
+remote: Compressing objects:  95% (42/44)
+remote: Compressing objects:  97% (43/44)
+remote: Compressing objects: 100% (44/44)
+remote: Compressing objects: 100% (44/44), done.
+remote: Total 47 (delta 3), reused 14 (delta 0), pack-reused 0
+Unpacking objects:   2% (1/47)
+Unpacking objects:   4% (2/47)
+Unpacking objects:   6% (3/47)
+Unpacking objects:   8% (4/47)
+Unpacking objects:  10% (5/47)
+Unpacking objects:  12% (6/47)
+Unpacking objects:  14% (7/47)
+Unpacking objects:  17% (8/47)
+Unpacking objects:  19% (9/47)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unpacking objects:  21% (10/47)
+Unpacking objects:  23% (11/47)
+Unpacking objects:  25% (12/47)
+Unpacking objects:  27% (13/47)
+Unpacking objects:  29% (14/47)
+Unpacking objects:  31% (15/47)
+Unpacking objects:  34% (16/47)
+Unpacking objects:  36% (17/47)
+Unpacking objects:  38% (18/47)
+Unpacking objects:  40% (19/47)
+Unpacking objects:  42% (20/47)
+Unpacking objects:  44% (21/47)
+Unpacking objects:  46% (22/47)
+Unpacking objects:  48% (23/47)
+Unpacking objects:  51% (24/47)
+Unpacking objects:  53% (25/47)
+Unpacking objects:  55% (26/47)
+Unpacking objects:  57% (27/47)
+Unpacking objects:  59% (28/47)
+Unpacking objects:  61% (29/47)
+Unpacking objects:  63% (30/47)
+Unpacking objects:  65% (31/47)
+Unpacking objects:  68% (32/47)
+Unpacking objects:  70% (33/47)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unpacking objects:  72% (34/47)
+Unpacking objects:  74% (35/47)
+Unpacking objects:  76% (36/47)
+Unpacking objects:  78% (37/47)
+Unpacking objects:  80% (38/47)
+Unpacking objects:  82% (39/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects:  85% (40/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects:  87% (41/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects:  89% (42/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects:  91% (43/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects:  93% (44/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects:  95% (45/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects:  97% (46/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects: 100% (47/47), 32.95 KiB | 65.00 KiB/s
+Unpacking objects: 100% (47/47), 42.93 KiB | 70.00 KiB/s, done.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/bin/bash: line 0: cd: /content/twint: No such file or directory
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiohttp==3.7.0
+  Downloading aiohttp-3.7.0-cp38-cp38-manylinux2014_x86_64.whl (1.5 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.3/1.5 MB</span> <span class=" -Color -Color-Red">8.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">1.5/1.5 MB</span> <span class=" -Color -Color-Red">21.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.5/1.5 MB</span> <span class=" -Color -Color-Red">15.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting chardet&lt;4.0,&gt;=2.0
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/133.4 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">133.4/133.4 KB</span> <span class=" -Color -Color-Red">8.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (1.8.2)
+Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (21.4.0)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.8/dist-packages (from aiohttp==3.7.0) (6.0.4)
+Collecting async-timeout&lt;4.0,&gt;=3.0
+  Downloading async_timeout-3.0.1-py3-none-any.whl (8.2 kB)
+Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp==3.7.0) (2.10)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: chardet, async-timeout, aiohttp
+  Attempting uninstall: chardet
+    Found existing installation: chardet 4.0.0
+    Uninstalling chardet-4.0.0:
+      Successfully uninstalled chardet-4.0.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: async-timeout
+    Found existing installation: async-timeout 4.0.2
+    Uninstalling async-timeout-4.0.2:
+      Successfully uninstalled async-timeout-4.0.2
+  Attempting uninstall: aiohttp
+    Found existing installation: aiohttp 3.8.4
+    Uninstalling aiohttp-3.8.4:
+      Successfully uninstalled aiohttp-3.8.4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed aiohttp-3.7.0 async-timeout-3.0.1 chardet-3.0.4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: nest_asyncio in /usr/local/lib/python3.8/dist-packages (1.5.6)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="import-library-twint">
+<h2>2. Import Library Twint<a class="headerlink" href="#import-library-twint" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">twint</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">nest_asyncio</span>
+<span class="n">nest_asyncio</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="crawling-data-twitter-dengan-twint">
+<h2>3. Crawling data twitter dengan Twint<a class="headerlink" href="#crawling-data-twitter-dengan-twint" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">twint</span><span class="o">.</span><span class="n">Config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Search</span> <span class="o">=</span> <span class="s2">&quot;ridwankamil&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Since</span> <span class="o">=</span> <span class="s2">&quot;2023-01-01&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Until</span> <span class="o">=</span> <span class="s2">&quot;2023-02-16&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Limit</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Pandas</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Lang</span> <span class="o">=</span> <span class="s2">&quot;id&quot;</span>
+
+<span class="n">twint</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">AttributeError</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">8</span><span class="n">a072f05f51d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">c</span> <span class="o">=</span> <span class="n">twint</span><span class="o">.</span><span class="n">Config</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">c</span><span class="o">.</span><span class="n">Search</span> <span class="o">=</span> <span class="s2">&quot;ridwankamil&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">c</span><span class="o">.</span><span class="n">Since</span> <span class="o">=</span> <span class="s2">&quot;2023-01-01&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">c</span><span class="o">.</span><span class="n">Until</span> <span class="o">=</span> <span class="s2">&quot;2023-02-16&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">c</span><span class="o">.</span><span class="n">Limit</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="ne">AttributeError</span>: module &#39;twint&#39; has no attribute &#39;Config&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>DataFrame hasil crawling twitter</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">twint</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">panda</span><span class="o">.</span><span class="n">Tweets_df</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;tweet&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-462565be-9204-4251-9f00-683049f0ef2f">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>username</th>
+      <th>tweet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2023-02-15 23:59:09</td>
+      <td>AdmiralZulpakar</td>
+      <td>Petani Milenial Jabar Keren....  #pplhiupdate_...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2023-02-15 23:58:55</td>
+      <td>istriS4H</td>
+      <td>@p3n7l7h @ridwankamil Tolong donggg ini namany...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2023-02-15 23:54:54</td>
+      <td>AnamjayaCom</td>
+      <td>@nadeennaa @p3n7l7h @ridwankamil Alhamdulillah...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023-02-15 23:53:06</td>
+      <td>IAS_TC_Depok</td>
+      <td>Situasi  lalu lintas Kota Depok dari IAS-TC  K...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2023-02-15 23:52:42</td>
+      <td>butawarna20</td>
+      <td>@p3n7l7h @ridwankamil NJIR SUMPAAH PELAKUNYA G...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>500</th>
+      <td>2023-02-15 15:03:00</td>
+      <td>egaalice</td>
+      <td>@p3n7l7h @ridwankamil Terapi apaan bgst, itu a...</td>
+    </tr>
+    <tr>
+      <th>501</th>
+      <td>2023-02-15 15:02:20</td>
+      <td>Sebutsaja_Ab</td>
+      <td>@nadeennaa @p3n7l7h @ridwankamil Salam kenal, ...</td>
+    </tr>
+    <tr>
+      <th>502</th>
+      <td>2023-02-15 15:01:58</td>
+      <td>cloudleskies</td>
+      <td>@p3n7l7h @ridwankamil Gedeg bgt ngeliatnya, ke...</td>
+    </tr>
+    <tr>
+      <th>503</th>
+      <td>2023-02-15 15:01:47</td>
+      <td>dasarklasemen</td>
+      <td>@eunikero @byeolsandal @p3n7l7h @ridwankamil m...</td>
+    </tr>
+    <tr>
+      <th>504</th>
+      <td>2023-02-15 15:01:28</td>
+      <td>kokonlimbonk</td>
+      <td>@pho_tique @p3n7l7h @ridwankamil Banyak orang ...</td>
+    </tr>
+  </tbody>
+</table>
+<p>505 rows × 3 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-462565be-9204-4251-9f00-683049f0ef2f')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-462565be-9204-4251-9f00-683049f0ef2f button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-462565be-9204-4251-9f00-683049f0ef2f');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+</div>
+<div class="section" id="export-to-csv">
+<h2>4.Export To CSV<a class="headerlink" href="#export-to-csv" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/My Drive/data/ridwankamil.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/drive
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
