@@ -51,6 +51,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="CrawlingPortalBerita.html" />
+    <link rel="prev" title="Crawling Twitter" href="CrawlingTwitter.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -368,8 +370,8 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (2.25.1)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests) (1.24.3)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests) (4.0.0)
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests) (2.10)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests) (4.0.0)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests) (2022.12.7)
 </pre></div>
 </div>
@@ -413,17 +415,7 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>Traceback (most recent call last)
-<span class="nn">/usr/local/lib/python3.8/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span>             <span class="k">try</span><span class="p">:</span>  <span class="c1"># Python 2.7, use buffering of HTTP responses</span>
-<span class="ne">--&gt; </span><span class="mi">377</span>                 <span class="n">httplib_response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">(</span><span class="n">buffering</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span>             <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>  <span class="c1"># Python 3</span>
-
-<span class="ne">TypeError</span>: getresponse() got an unexpected keyword argument &#39;buffering&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="n">e1614fa69e7d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
@@ -474,53 +466,46 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 <span class="g g-Whitespace">    </span><span class="mi">599</span>                                                   <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
 
 <span class="nn">/usr/local/lib/python3.8/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span>             <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>  <span class="c1"># Python 3</span>
-<span class="g g-Whitespace">    </span><span class="mi">379</span>                 <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">380</span>                     <span class="n">httplib_response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span>                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span>                     <span class="c1"># Remove the TypeError from the exception chain in Python 3;</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>         <span class="c1"># Trigger any extra validation we need to do.</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_validate_conn</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>         <span class="k">except</span> <span class="p">(</span><span class="n">SocketTimeout</span><span class="p">,</span> <span class="n">BaseSSLError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span>             <span class="c1"># Py2 raises this as a BaseSSLError, Py3 raises it as socket timeout.</span>
 
-<span class="nn">/usr/lib/python3.8/http/client.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1346</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1347</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1348</span>                 <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1349</span>             <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1350</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nn">/usr/local/lib/python3.8/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
+<span class="g g-Whitespace">    </span><span class="mi">837</span>         <span class="c1"># Force connect early to allow us to validate the connection.</span>
+<span class="g g-Whitespace">    </span><span class="mi">838</span>         <span class="k">if</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;sock&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>  <span class="c1"># AppEngine might not have  `.sock`</span>
+<span class="ne">--&gt; </span><span class="mi">839</span>             <span class="n">conn</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">840</span> 
+<span class="g g-Whitespace">    </span><span class="mi">841</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">conn</span><span class="o">.</span><span class="n">is_verified</span><span class="p">:</span>
 
-<span class="nn">/usr/lib/python3.8/http/client.py</span> in <span class="ni">begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="c1"># read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">316</span>             <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>             <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span>                 <span class="k">break</span>
+<span class="nn">/usr/local/lib/python3.8/dist-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="c1"># Add certificate verification</span>
+<span class="ne">--&gt; </span><span class="mi">301</span>         <span class="n">conn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_conn</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>         <span class="n">hostname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> 
 
-<span class="nn">/usr/lib/python3.8/http/client.py</span> in <span class="ni">_read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span> 
-<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="k">def</span> <span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">277</span>         <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>             <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
+<span class="nn">/usr/local/lib/python3.8/dist-packages/urllib3/connection.py</span> in <span class="ni">_new_conn</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span> 
+<span class="g g-Whitespace">    </span><span class="mi">157</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">158</span>             <span class="n">conn</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span>                 <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dns_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> 
 
-<span class="nn">/usr/lib/python3.8/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">669</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span>             <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nn">/usr/local/lib/python3.8/dist-packages/urllib3/util/connection.py</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="n">family</span> <span class="o">=</span> <span class="n">allowed_gai_family</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> 
+<span class="ne">---&gt; </span><span class="mi">57</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>         <span class="n">sock</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="nn">/usr/lib/python3.8/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>                   <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1240</span>                   <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1241</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1242</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1243</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">/usr/lib/python3.8/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span>             <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1099</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>             <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1101</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="nn">/usr/lib/python3.8/socket.py</span> in <span class="ni">getaddrinfo</span><span class="nt">(host, port, family, type, proto, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">916</span>     <span class="c1"># and socket type values to enum constants.</span>
+<span class="g g-Whitespace">    </span><span class="mi">917</span>     <span class="n">addrlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">918</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+<span class="g g-Whitespace">    </span><span class="mi">920</span>         <span class="n">addrlist</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">_intenum_converter</span><span class="p">(</span><span class="n">af</span><span class="p">,</span> <span class="n">AddressFamily</span><span class="p">),</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -713,14 +698,9 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/My Drive/prosaindata/CrawlingData/ptautm.csv&#39;</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/My Drive/data/ptautm.csv&#39;</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
 </pre></div>
 </div>
 </div>
@@ -753,6 +733,20 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CrawlingTwitter.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Crawling Twitter</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CrawlingPortalBerita.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
