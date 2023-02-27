@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crawaling Portal Berita &#8212; Proyek Sains Data</title>
+    <title>Crawling Portal Berita &#8212; Proyek Sains Data</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -129,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Crawaling Portal Berita
+   Crawling Portal Berita
   </a>
  </li>
 </ul>
@@ -328,7 +328,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Crawaling Portal Berita</h1>
+                <h1>Crawling Portal Berita</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -340,8 +340,393 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="crawaling-portal-berita">
-<h1>Crawaling Portal Berita<a class="headerlink" href="#crawaling-portal-berita" title="Permalink to this headline">#</a></h1>
+  <div class="section" id="crawling-portal-berita">
+<h1>Crawling Portal Berita<a class="headerlink" href="#crawling-portal-berita" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install requests
+<span class="o">!</span>pip install beautifulsoup4
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (2.25.1)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests) (2022.12.7)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests) (3.0.4)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests) (1.24.3)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests) (2.10)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-packages (4.6.3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.viva.co.id/indeks&#39;</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36&#39;</span>
+<span class="p">}</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">bs</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="s1">&#39;article-list-row&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="n">desc</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="s1">&#39;article-list-desc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">title</span><span class="p">,</span> <span class="n">desc</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[&#39;Profil Abby Choi, Model Hong Kong yang Dimutilasi dan Dijadikan Sup&#39;], [&#39;Model cantik asal Hong Kong, Abby Choi (28thn) ditemukan tewas dalam kondisi tubuh termutilasi di sebuah kontrakan di wilayah Distrik Tai Po pada Jumat, 24 Februari 2023.&#39;]], [[&#39;Sebelum Dimutilasi, Abby Choi Masih Berhubungan Baik dengan Keluarga Mantan Suami&#39;], [&#39;Kematian tragis dialami oleh influencer sekaligus model asal Hong Kong Abby Choi. Ia diduga telah dibunuh dan dimutilasi oleh mantan suaminya Alex Kwong dan keluarganya.&#39;]], [[&#39;Richard Eliezer Akan Dieksekusi ke Lapas Salemba Hari Ini&#39;], [&#39;Pelaksanaan eksekusi ini guna menjamin hak-hak terpidana Richard Eliezer dapar digunakan seluruhnya.&#39;]], [[&#39;Pantes Glowing, Verrell Bramasta Ternyata Mandi Pakai Air Mineral&#39;], [&#39;Baru-baru ini artis Verrell Bramasta menjadi sorotan netizen di media sosial lantaran mandi dengan menggunakan air mineral yang umumnya untuk diminum.&#39;]], [[&#39;AS Ancam Ada Konsekuensi Serius Akan Ditanggung China jika Kirim Senjata ke Rusia&#39;], [&#39;Keputusan membantu Moskow, termasuk memberikan bantuan militer, ada di tangan Beijing sendiri. Tetapi jika itu terjadi, akan ada konsekuensi yang harus ditanggung China.&#39;]], [[&#39;Capres Sudah di Kantong Megawati, Hasto: Kami Usung Calon dari Rahim PDIP&#39;], [&#39;PDIP menyebut ketua umumnya, Megawati Soekarnoputri sudah mengantongi sejumlah nama bakal capres yang diusung PDIP.&#39;]], [[&#39;Pembunuhan Sadis Abby Choi Didalangi Mantan Suami dan Ayah Mertua&#39;], [&#39;Kasus\xa0pembunuhan\xa0model dan sosialita Hong Kong, Abby Choi menyita perhatian publik. Choi diduga dibunuh dan dimutilasi oleh sang mantan suami, Alex Kwong dan keluarganya.&#39;]], [[&#39;Adik Buka Suara Soal Isu Perceraian Indra Bekti dan Adila Jelita&#39;], [&#39;Kabar tidak sedap tengah menerpa pasangan Indra Bekti dan Aldila Jelita. Setelah sempat ditimpa musibah karena Indra Bekti mengalami pendarahan otak hingga dirawat.&#39;]], [[&#39;Survei IndoStrategi: Prabowo Subianto Puncaki Keterpilihan di Pilpres 2024&#39;], [&#39;Ketua Umum Partai Gerindra, juga Capres 2024, Prabowo Subianto, memuncaki elektabilitas capres pilihan masyarakat. Itu hasil survei, IndoStrategi Research and Consulting.&#39;]], [[&#39;Petaka Barcelona di Markas Almeria&#39;], [&#39;Kekalahan ini tidak mengubah posisi Barcelona di puncak klasemen sementara LaLiga. Tapi mereka gagal memanfaatkan kesempatan untuk memperbesar jarak dari Real Madrid.&#39;]], [[&#39;Hindari Politisasi Pemilu 2024, DMI se-Sumatera Dorong Muktamar Dipercepat&#39;], [&#39;Muktamar DMI ke-VIII diharapkan bisa berlangsung pada Juli 2023, atau sebelum memasuki masa pemilu 2024 yang tahapannya sudah dimulai pada Agustus 2023.&#39;]], [[&#39;IHSG Berpotensi Menguat Terdorong Derasnya Capital Inflow, Intip Saham Rekomendasi&#39;], [&#39;Indeks harga saham gabungan atau IHSG melemah 3 poin atau 0,06 persen di level 6.852, pada pembukaan perdagangan Senin pagi.&#39;]], [[&#39;AS Klaim COVID-19 Muncul Akibat Kebocoran Laboratorium di China&#39;], [&#39;Orang-orang yang membaca laporan rahasia tersebut menyoroti bagaimana berbagai lembaga tetap terbagi atas asal-usul COVID-19 dan pandemi yang melanda dunia awal 2020.&#39;]], [[&#39;Brimob Gadungan di Makassar Ternyata Sering Ikut Penggerebekan Bareng Polisi Asli&#39;], [&#39;Pria bernama Haerul yang sudah 5 tahun menjadi anggota Brimob gadungan di Makassar. Haerul juga kerap ikut melakukan penggerebekan dan penangkapan aparat Kepolisian asli&#39;]], [[&#39;Mualaf Sejak Usia 14 Tahun, David Dijanjikan Ini Oleh Alissa Wahid Saat Sehat Nanti&#39;], [&#39;Alissa Qotrunnada Wahid, Putri Presiden RI ke 4 Abdurrahman Wahid (Gus Dur), berbicara mengenai kondisi David Latumahina, seorang remaja yang dianiaya Mario Dandy Satrio.&#39;]], [[&#39;Profil Istri Rafael Alun Trisambodo Suka Pamer Harta Bergaya Hedon&#39;], [&#39;Istri Rafael Alun Trisambodo juga kena imbas akibat ulah anaknya Mario Dandy Satriyo yang menganiaya David hingga koma. Profil ibu Mario Dandy pun kini jadi sorotan.&#39;]], [[&#39;Tengkorak Model Hong Kong Abby Choi Ditemukan di Panci Sup, Polisi Tangkap Tersangka Kelima&#39;], [&#39;Bagian tubuh Abby Choi ditemukan di salah satu dari dua panci sup besar yang diambil polisi dari rumah tiga lantai, di Lung Mei Tsuen.&#39;]], [[&#39;Deretan Rumah Mewah Milik Rafael Alun Trisambodo yang Tersebar Hingga Yogya dan Manado&#39;], [&#39;Harta kekayaan dan rumah mewah yang dimiliki oleh mantan pejabat Rafael Alun Trisambodo belakangan ini jadi ramai diperbincangkan publik di media sosial.&#39;]], [[&#39;Imigrasi Malaysia Tahan Pasutri dan 13 WNI Dalam Operasi TKA iIegal&#39;], [&#39;Departemen Imigrasi Malaysia (JIM) menahan sepasang\xa0suami istri yang diduga menjadi agen pembantu asing ilegal dan 13\xa0perempuan WNI di\xa0Shah\xa0Alam, Selangor, Malaysia.&#39;]], [[&#39;Sadis! Masalah Harta Diduga Jadi Motif Pembunuhan Model Cantik Abby Choi&#39;], [&#39;Menurut keterangan inspektur polisi, rupanya ada pihak keluarga dari mantan suami Abby Choi yang merasa tidak puas dengan cara mantan istrinya tersebut dalam tangani aset&#39;]], [[&#39;5 Fakta Menarik AC Milan saat Tumbangkan Atalanta&#39;], [&#39;AC Milan berhasil mraih poin sempurna saat menumbangkan Atalanta dalam lanjutan Serie A di Stadion San Siro pada Senin dini hari tadi, 27 Februari 2023.&#39;]], [[&#39;Singgung Profesi Dokter, Jerome Polin Kena Hujat Netizen&#39;], [&#39;Jerome Polin mendapatkan kabar kurang sedap setelah dirinya mendapatkan hujatan lagi dari netizen setelah diduga menyinggung profesi dokter.&#39;]], [[&#39;6 Fakta Wanita Potong Alat Kelamin Selingkuhan karena Tolak Hubungan Seks&#39;], [&#39;Sedang viral seorang wanita yang nekat memotong alat kelamin pria yang diduga sebagai selingkuhannya di sebuah hotel di Kota Sibolga, Sumatera Utara. Berikut ini faktanya&#39;]], [[&#39;Pria Tidak Menikah Memiliki Risiko Kematian yang Lebih Besar&#39;], [&#39;Pria yang tidak pernah menikah menghadapi risiko kematian yang lebih besar karena gagal jantung.&#39;]], [[&#39;Ketum PPP Beri Lampu Hijau Usung Yudi Lasminingrat di Pilbup Garut 2024&#39;], [&#39;Partai Persatuan Pembangunan (PPP) mulai merapatkan barisan. PPP siap mengantar kader terbaiknya untuk bertarung di pemilihan Bupati dan Wakil Bupati tahun depan.&#39;]], [[&#39;Pacar Mario Dandy Sindir Para Artis, Model Hong Kong Dimutilasi dan Dijadikan Sup&#39;], [&#39;Kasus penganiayaan oleh Mario Dandy terus menjadi perhatian, tak terkecuali pacarnya yang disebut menjadi pemicu kekerasan, menjadi salah satu berita paling banyak dibaca&#39;]], [[&#39;Wanita Ini Potong Alat Kelamin Selingkuhan Karena Sakit Hati Dipaksa Hubungan Seks&#39;], [&#39;Seorang wanita berinsial AST (28) nekat memotong alat kelamin\xa0selingkuhannya yang berinsial OG (28) di sebuah hotel yang berada di Kota Sibolga, Sumatera Utara.&#39;]], [[&#39;5 Artikel Populer: Irjen Fadil Mau Dilaporkan, Video Hakim, hingga Curhat Istri Hendra&#39;], [&#39;Ada 5 artikel yang menarik pembaca dan masuk populer dari Kanal News VIVA.co.id sepanjang Minggu, 26 Februari 2022.&#39;]], [[&#39;Komjen Ahmad Dofiri: Adhi Makayasa Akpol 89, Pimpin Pemecatan Ferdy Sambo Kini Jadi Irwasum Polri&#39;], [&#39;Komisaris Jenderal (Komjen) Polisi, Ahmad Dofiri dimutasi dari jabatan Kabaintelkam Polri kini menjadi Irwasum Polri menggantikan Komjen Agung yang memasuki masa pensiun.&#39;]], [[&#39;5 Fakta Terbaru Penganiayaan Mario Dandy ke David Anak Petinggi GP Ansor&#39;], [&#39;Ramai beredar video di media sosial penganiayaan yang dilakukan Mario Dandy terhadap David hingga tak sadarkan diri. Berikut beberapa fakta terbarunya.&#39;]], [[&#39;Ketika Bos Esemka Goda Kaesang Pangarep Beli Mobilnya, Apa Responnya?&#39;], [&#39;Putra Presiden Joko Widodo, Kaesang Pangarep, mengunjungi pameran Indonesia International Motor Show (IIMS) 2023. Kaesang bertandang ke booth Esemka, kemarin.&#39;]], [[&#39;Terjebak Nostalgia Bersama Suzuki Grand Vitara yang Makin Canggih dan Gagah&#39;], [&#39;PT Suzuki Indomobil Sales membuat kejutan pada pameran Indonesia International Motor Show atau IIMS 2023 dengan rilis Suzuki Grand Vitara. Hadir dengan banyak pembaruan.&#39;]]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">,</span> <span class="s1">&#39;Berita&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Berita&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Berita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Profil Abby Choi, Model Hong Kong yang Dimutil...</td>
+      <td>Model cantik asal Hong Kong, Abby Choi (28thn)...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Sebelum Dimutilasi, Abby Choi Masih Berhubunga...</td>
+      <td>Kematian tragis dialami oleh influencer sekali...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Richard Eliezer Akan Dieksekusi ke Lapas Salem...</td>
+      <td>Pelaksanaan eksekusi ini guna menjamin hak-hak...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pantes Glowing, Verrell Bramasta Ternyata Mand...</td>
+      <td>Baru-baru ini artis Verrell Bramasta menjadi s...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AS Ancam Ada Konsekuensi Serius Akan Ditanggun...</td>
+      <td>Keputusan membantu Moskow, termasuk memberikan...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Capres Sudah di Kantong Megawati, Hasto: Kami ...</td>
+      <td>PDIP menyebut ketua umumnya, Megawati Soekarno...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Pembunuhan Sadis Abby Choi Didalangi Mantan Su...</td>
+      <td>Kasus pembunuhan model dan sosialita Hong Kong...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Adik Buka Suara Soal Isu Perceraian Indra Bekt...</td>
+      <td>Kabar tidak sedap tengah menerpa pasangan Indr...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Survei IndoStrategi: Prabowo Subianto Puncaki ...</td>
+      <td>Ketua Umum Partai Gerindra, juga Capres 2024, ...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Petaka Barcelona di Markas Almeria</td>
+      <td>Kekalahan ini tidak mengubah posisi Barcelona ...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Hindari Politisasi Pemilu 2024, DMI se-Sumater...</td>
+      <td>Muktamar DMI ke-VIII diharapkan bisa berlangsu...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>IHSG Berpotensi Menguat Terdorong Derasnya Cap...</td>
+      <td>Indeks harga saham gabungan atau IHSG melemah ...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>AS Klaim COVID-19 Muncul Akibat Kebocoran Labo...</td>
+      <td>Orang-orang yang membaca laporan rahasia terse...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Brimob Gadungan di Makassar Ternyata Sering Ik...</td>
+      <td>Pria bernama Haerul yang sudah 5 tahun menjadi...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Mualaf Sejak Usia 14 Tahun, David Dijanjikan I...</td>
+      <td>Alissa Qotrunnada Wahid, Putri Presiden RI ke ...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Profil Istri Rafael Alun Trisambodo Suka Pamer...</td>
+      <td>Istri Rafael Alun Trisambodo juga kena imbas a...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Tengkorak Model Hong Kong Abby Choi Ditemukan ...</td>
+      <td>Bagian tubuh Abby Choi ditemukan di salah satu...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Deretan Rumah Mewah Milik Rafael Alun Trisambo...</td>
+      <td>Harta kekayaan dan rumah mewah yang dimiliki o...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Imigrasi Malaysia Tahan Pasutri dan 13 WNI Dal...</td>
+      <td>Departemen Imigrasi Malaysia (JIM) menahan sep...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Sadis! Masalah Harta Diduga Jadi Motif Pembunu...</td>
+      <td>Menurut keterangan inspektur polisi, rupanya a...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>5 Fakta Menarik AC Milan saat Tumbangkan Atalanta</td>
+      <td>AC Milan berhasil mraih poin sempurna saat men...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Singgung Profesi Dokter, Jerome Polin Kena Huj...</td>
+      <td>Jerome Polin mendapatkan kabar kurang sedap se...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>6 Fakta Wanita Potong Alat Kelamin Selingkuhan...</td>
+      <td>Sedang viral seorang wanita yang nekat memoton...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Pria Tidak Menikah Memiliki Risiko Kematian ya...</td>
+      <td>Pria yang tidak pernah menikah menghadapi risi...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Ketum PPP Beri Lampu Hijau Usung Yudi Lasminin...</td>
+      <td>Partai Persatuan Pembangunan (PPP) mulai merap...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Pacar Mario Dandy Sindir Para Artis, Model Hon...</td>
+      <td>Kasus penganiayaan oleh Mario Dandy terus menj...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Wanita Ini Potong Alat Kelamin Selingkuhan Kar...</td>
+      <td>Seorang wanita berinsial AST (28) nekat memoto...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>5 Artikel Populer: Irjen Fadil Mau Dilaporkan,...</td>
+      <td>Ada 5 artikel yang menarik pembaca dan masuk p...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Komjen Ahmad Dofiri: Adhi Makayasa Akpol 89, P...</td>
+      <td>Komisaris Jenderal (Komjen) Polisi, Ahmad Dofi...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>5 Fakta Terbaru Penganiayaan Mario Dandy ke Da...</td>
+      <td>Ramai beredar video di media sosial penganiaya...</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Ketika Bos Esemka Goda Kaesang Pangarep Beli M...</td>
+      <td>Putra Presiden Joko Widodo, Kaesang Pangarep, ...</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Terjebak Nostalgia Bersama Suzuki Grand Vitara...</td>
+      <td>PT Suzuki Indomobil Sales membuat kejutan pada...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/data/portalberita.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">18518</span><span class="n">f6822c6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/data/portalberita.csv&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>   <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>   <span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">100</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>       <span class="s1">&#39;TBE_EPHEM_CREDS_ADDR&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">ephemeral</span> <span class="k">else</span> <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TBE_CREDS_ADDR&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">123</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> 
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span>   <span class="n">request_id</span> <span class="o">=</span> <span class="n">send_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">171</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">if</span> <span class="p">(</span><span class="n">reply</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;colab_reply&#39;</span> <span class="ow">and</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
