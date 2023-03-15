@@ -1,47 +1,58 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crawling Portal Berita &#8212; Proyek Sains Data</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -49,60 +60,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CrawlingPortalBerita';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tugas Pipelines" href="Pipelines.html" />
     <link rel="prev" title="Crawling Tugas Akhir" href="CrawlingTugasAkhir.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo_tugas.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Proyek Sains Data</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo_tugas.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_tugas.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -111,255 +155,228 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  TUGAS
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">TUGAS</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="CrawlingTwitter.html">
-   Crawling Twitter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="CrawlingTugasAkhir.html">
-   Crawling Tugas Akhir
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Crawling Portal Berita
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="CrawlingTwitter.html">Crawling Twitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CrawlingTugasAkhir.html">Crawling Tugas Akhir</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Portal Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pipelines.html">Tugas Pipelines</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/CrawlingPortalBerita.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCrawlingPortalBerita.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CrawlingPortalBerita.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCrawlingPortalBerita.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/CrawlingPortalBerita.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
+</div></div>
       
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
+    </div>
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
 </div>
+</div>
+              
+              
 
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crawling Portal Berita</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Crawling Portal Berita</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
-            </div>
-            <main id="main-content" role="main">
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <div class="section" id="crawling-portal-berita">
-<h1>Crawling Portal Berita<a class="headerlink" href="#crawling-portal-berita" title="Permalink to this headline">#</a></h1>
+<h1>Crawling Portal Berita<a class="headerlink" href="#crawling-portal-berita" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install requests
-<span class="o">!</span>pip install beautifulsoup4
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>requests
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (2.25.1)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests) (2022.12.7)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests) (3.0.4)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests) (1.24.3)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests) (2.10)
+Requirement already satisfied: requests in /usr/local/lib/python3.9/dist-packages (2.25.1)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/dist-packages (from requests) (4.0.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/dist-packages (from requests) (2022.12.7)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/dist-packages (from requests) (2.10)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/dist-packages (from requests) (1.26.15)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-packages (4.6.3)
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.9/dist-packages (4.9.3)
+Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.9/dist-packages (from beautifulsoup4) (2.4)
 </pre></div>
 </div>
 </div>
@@ -396,7 +413,7 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[&#39;Profil Abby Choi, Model Hong Kong yang Dimutilasi dan Dijadikan Sup&#39;], [&#39;Model cantik asal Hong Kong, Abby Choi (28thn) ditemukan tewas dalam kondisi tubuh termutilasi di sebuah kontrakan di wilayah Distrik Tai Po pada Jumat, 24 Februari 2023.&#39;]], [[&#39;Sebelum Dimutilasi, Abby Choi Masih Berhubungan Baik dengan Keluarga Mantan Suami&#39;], [&#39;Kematian tragis dialami oleh influencer sekaligus model asal Hong Kong Abby Choi. Ia diduga telah dibunuh dan dimutilasi oleh mantan suaminya Alex Kwong dan keluarganya.&#39;]], [[&#39;Richard Eliezer Akan Dieksekusi ke Lapas Salemba Hari Ini&#39;], [&#39;Pelaksanaan eksekusi ini guna menjamin hak-hak terpidana Richard Eliezer dapar digunakan seluruhnya.&#39;]], [[&#39;Pantes Glowing, Verrell Bramasta Ternyata Mandi Pakai Air Mineral&#39;], [&#39;Baru-baru ini artis Verrell Bramasta menjadi sorotan netizen di media sosial lantaran mandi dengan menggunakan air mineral yang umumnya untuk diminum.&#39;]], [[&#39;AS Ancam Ada Konsekuensi Serius Akan Ditanggung China jika Kirim Senjata ke Rusia&#39;], [&#39;Keputusan membantu Moskow, termasuk memberikan bantuan militer, ada di tangan Beijing sendiri. Tetapi jika itu terjadi, akan ada konsekuensi yang harus ditanggung China.&#39;]], [[&#39;Capres Sudah di Kantong Megawati, Hasto: Kami Usung Calon dari Rahim PDIP&#39;], [&#39;PDIP menyebut ketua umumnya, Megawati Soekarnoputri sudah mengantongi sejumlah nama bakal capres yang diusung PDIP.&#39;]], [[&#39;Pembunuhan Sadis Abby Choi Didalangi Mantan Suami dan Ayah Mertua&#39;], [&#39;Kasus\xa0pembunuhan\xa0model dan sosialita Hong Kong, Abby Choi menyita perhatian publik. Choi diduga dibunuh dan dimutilasi oleh sang mantan suami, Alex Kwong dan keluarganya.&#39;]], [[&#39;Adik Buka Suara Soal Isu Perceraian Indra Bekti dan Adila Jelita&#39;], [&#39;Kabar tidak sedap tengah menerpa pasangan Indra Bekti dan Aldila Jelita. Setelah sempat ditimpa musibah karena Indra Bekti mengalami pendarahan otak hingga dirawat.&#39;]], [[&#39;Survei IndoStrategi: Prabowo Subianto Puncaki Keterpilihan di Pilpres 2024&#39;], [&#39;Ketua Umum Partai Gerindra, juga Capres 2024, Prabowo Subianto, memuncaki elektabilitas capres pilihan masyarakat. Itu hasil survei, IndoStrategi Research and Consulting.&#39;]], [[&#39;Petaka Barcelona di Markas Almeria&#39;], [&#39;Kekalahan ini tidak mengubah posisi Barcelona di puncak klasemen sementara LaLiga. Tapi mereka gagal memanfaatkan kesempatan untuk memperbesar jarak dari Real Madrid.&#39;]], [[&#39;Hindari Politisasi Pemilu 2024, DMI se-Sumatera Dorong Muktamar Dipercepat&#39;], [&#39;Muktamar DMI ke-VIII diharapkan bisa berlangsung pada Juli 2023, atau sebelum memasuki masa pemilu 2024 yang tahapannya sudah dimulai pada Agustus 2023.&#39;]], [[&#39;IHSG Berpotensi Menguat Terdorong Derasnya Capital Inflow, Intip Saham Rekomendasi&#39;], [&#39;Indeks harga saham gabungan atau IHSG melemah 3 poin atau 0,06 persen di level 6.852, pada pembukaan perdagangan Senin pagi.&#39;]], [[&#39;AS Klaim COVID-19 Muncul Akibat Kebocoran Laboratorium di China&#39;], [&#39;Orang-orang yang membaca laporan rahasia tersebut menyoroti bagaimana berbagai lembaga tetap terbagi atas asal-usul COVID-19 dan pandemi yang melanda dunia awal 2020.&#39;]], [[&#39;Brimob Gadungan di Makassar Ternyata Sering Ikut Penggerebekan Bareng Polisi Asli&#39;], [&#39;Pria bernama Haerul yang sudah 5 tahun menjadi anggota Brimob gadungan di Makassar. Haerul juga kerap ikut melakukan penggerebekan dan penangkapan aparat Kepolisian asli&#39;]], [[&#39;Mualaf Sejak Usia 14 Tahun, David Dijanjikan Ini Oleh Alissa Wahid Saat Sehat Nanti&#39;], [&#39;Alissa Qotrunnada Wahid, Putri Presiden RI ke 4 Abdurrahman Wahid (Gus Dur), berbicara mengenai kondisi David Latumahina, seorang remaja yang dianiaya Mario Dandy Satrio.&#39;]], [[&#39;Profil Istri Rafael Alun Trisambodo Suka Pamer Harta Bergaya Hedon&#39;], [&#39;Istri Rafael Alun Trisambodo juga kena imbas akibat ulah anaknya Mario Dandy Satriyo yang menganiaya David hingga koma. Profil ibu Mario Dandy pun kini jadi sorotan.&#39;]], [[&#39;Tengkorak Model Hong Kong Abby Choi Ditemukan di Panci Sup, Polisi Tangkap Tersangka Kelima&#39;], [&#39;Bagian tubuh Abby Choi ditemukan di salah satu dari dua panci sup besar yang diambil polisi dari rumah tiga lantai, di Lung Mei Tsuen.&#39;]], [[&#39;Deretan Rumah Mewah Milik Rafael Alun Trisambodo yang Tersebar Hingga Yogya dan Manado&#39;], [&#39;Harta kekayaan dan rumah mewah yang dimiliki oleh mantan pejabat Rafael Alun Trisambodo belakangan ini jadi ramai diperbincangkan publik di media sosial.&#39;]], [[&#39;Imigrasi Malaysia Tahan Pasutri dan 13 WNI Dalam Operasi TKA iIegal&#39;], [&#39;Departemen Imigrasi Malaysia (JIM) menahan sepasang\xa0suami istri yang diduga menjadi agen pembantu asing ilegal dan 13\xa0perempuan WNI di\xa0Shah\xa0Alam, Selangor, Malaysia.&#39;]], [[&#39;Sadis! Masalah Harta Diduga Jadi Motif Pembunuhan Model Cantik Abby Choi&#39;], [&#39;Menurut keterangan inspektur polisi, rupanya ada pihak keluarga dari mantan suami Abby Choi yang merasa tidak puas dengan cara mantan istrinya tersebut dalam tangani aset&#39;]], [[&#39;5 Fakta Menarik AC Milan saat Tumbangkan Atalanta&#39;], [&#39;AC Milan berhasil mraih poin sempurna saat menumbangkan Atalanta dalam lanjutan Serie A di Stadion San Siro pada Senin dini hari tadi, 27 Februari 2023.&#39;]], [[&#39;Singgung Profesi Dokter, Jerome Polin Kena Hujat Netizen&#39;], [&#39;Jerome Polin mendapatkan kabar kurang sedap setelah dirinya mendapatkan hujatan lagi dari netizen setelah diduga menyinggung profesi dokter.&#39;]], [[&#39;6 Fakta Wanita Potong Alat Kelamin Selingkuhan karena Tolak Hubungan Seks&#39;], [&#39;Sedang viral seorang wanita yang nekat memotong alat kelamin pria yang diduga sebagai selingkuhannya di sebuah hotel di Kota Sibolga, Sumatera Utara. Berikut ini faktanya&#39;]], [[&#39;Pria Tidak Menikah Memiliki Risiko Kematian yang Lebih Besar&#39;], [&#39;Pria yang tidak pernah menikah menghadapi risiko kematian yang lebih besar karena gagal jantung.&#39;]], [[&#39;Ketum PPP Beri Lampu Hijau Usung Yudi Lasminingrat di Pilbup Garut 2024&#39;], [&#39;Partai Persatuan Pembangunan (PPP) mulai merapatkan barisan. PPP siap mengantar kader terbaiknya untuk bertarung di pemilihan Bupati dan Wakil Bupati tahun depan.&#39;]], [[&#39;Pacar Mario Dandy Sindir Para Artis, Model Hong Kong Dimutilasi dan Dijadikan Sup&#39;], [&#39;Kasus penganiayaan oleh Mario Dandy terus menjadi perhatian, tak terkecuali pacarnya yang disebut menjadi pemicu kekerasan, menjadi salah satu berita paling banyak dibaca&#39;]], [[&#39;Wanita Ini Potong Alat Kelamin Selingkuhan Karena Sakit Hati Dipaksa Hubungan Seks&#39;], [&#39;Seorang wanita berinsial AST (28) nekat memotong alat kelamin\xa0selingkuhannya yang berinsial OG (28) di sebuah hotel yang berada di Kota Sibolga, Sumatera Utara.&#39;]], [[&#39;5 Artikel Populer: Irjen Fadil Mau Dilaporkan, Video Hakim, hingga Curhat Istri Hendra&#39;], [&#39;Ada 5 artikel yang menarik pembaca dan masuk populer dari Kanal News VIVA.co.id sepanjang Minggu, 26 Februari 2022.&#39;]], [[&#39;Komjen Ahmad Dofiri: Adhi Makayasa Akpol 89, Pimpin Pemecatan Ferdy Sambo Kini Jadi Irwasum Polri&#39;], [&#39;Komisaris Jenderal (Komjen) Polisi, Ahmad Dofiri dimutasi dari jabatan Kabaintelkam Polri kini menjadi Irwasum Polri menggantikan Komjen Agung yang memasuki masa pensiun.&#39;]], [[&#39;5 Fakta Terbaru Penganiayaan Mario Dandy ke David Anak Petinggi GP Ansor&#39;], [&#39;Ramai beredar video di media sosial penganiayaan yang dilakukan Mario Dandy terhadap David hingga tak sadarkan diri. Berikut beberapa fakta terbarunya.&#39;]], [[&#39;Ketika Bos Esemka Goda Kaesang Pangarep Beli Mobilnya, Apa Responnya?&#39;], [&#39;Putra Presiden Joko Widodo, Kaesang Pangarep, mengunjungi pameran Indonesia International Motor Show (IIMS) 2023. Kaesang bertandang ke booth Esemka, kemarin.&#39;]], [[&#39;Terjebak Nostalgia Bersama Suzuki Grand Vitara yang Makin Canggih dan Gagah&#39;], [&#39;PT Suzuki Indomobil Sales membuat kejutan pada pameran Indonesia International Motor Show atau IIMS 2023 dengan rilis Suzuki Grand Vitara. Hadir dengan banyak pembaruan.&#39;]]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[&#39;Kembali Jadi Soroton, Ini Kilas Balik Kasus Kopi Sianida Jessica Kumala Wongso&#39;], [&#39;Nama Jessica Kumala Wongso kembali menjadi sorotan beberapa waktu belakangan ini terkait dengan kasus pembunuhan Brigadir Joshua Hutabarat yang melibatkan Ferdy Sambo.&#39;]], [[&#39;Dicecar 26 Pertanyaan, Johnny G Plate Tolak Tanya-Jawab Dengan Wartawan&#39;], [&#39;Menkominfo, Johnny G Plate telah selesai menjalani pemeriksaan terkait kasus dugaan korupsi pengadaan BTS. Johnny Plate mengaku dicecar 26 pertanyaan saat pemeriksaan. .&#39;]], [[&quot;Dirjen Pajak Janji Lakukan Perbaikan di DJP Tutup Celah Kemunculan &#39;RAT&#39; Berikutnya&quot;], [&#39;Direktorat Jenderal Pajak (DJP) Kementerian Keuangan (Kemenkeu) menyatakan akan melakukan perbaikan menyeluruh.&#39;]], [[&#39;Ahli: Belum Ada Negara yang Wajibkan Pelabelan Potensi BPA di Kemasan AMDK&#39;], [&quot;Menurut ahli, mengacu hasil kajian lembaga pengawas keamanan pangan di berbagai negara, pelabelan kemasan air minum &#39;Berpotensi Mengandung BPA&#39; belum perlu dilakukan.&quot;]], [[&#39;THE STORIES SEASON 2: Balada Cerita Ramadhan 2023 Tayang Spesial di 4 Radio&#39;], [&#39;Balada Cerita Ramadhan merupakan program unggulan Prambors dalam bentuk drama audio yang hadir setiap tahunnya. Tahun 2023 menjadi tahun spesial karena hadir di 4 radio.&#39;]], [[&#39;Kemenkes Mulai Susun Daftar Isian Masukan RUU Kesehatan&#39;], [&#39;RUU Kesehatan nantinya akan menjadi landasan bagi reformasi sektor kesehatan, sehingga layanan kesehatan dapat diakses masyarakat dengan lebih mudah, murah, dan akurat.&#39;]], [[&#39;Mark Zuckerberg Pecat Lagi 10 Ribu Karyawan&#39;], [&#39;Kepala Eksekutif Meta Mark Zuckerberg akan memangkas 10.000 karyawan pada tahun ini, setelah sebelumnya mem-PHK 11.000 karyawan Facebook dan Instagram pada November 2022.&#39;]], [[&#39;Johnny G Plate Rampung Diperiksa Kejagung di Kasus Korupsi BTS&#39;], [&#39;Menteri Komunikasi dan Informatika, Johnny G Plate telah selesai menjalani pemeriksaan kasus dugaan korupsi penyediaan infrastruktur Base Transceiver Station (BTS)&#39;]], [[&#39;Hashim Bilang Cak Imin Belum Pasti, Pengamat Sebut Peluang Duet Prabowo-Airlangga&#39;], [&#39;Partai Golkar, melalui Ketum Airlangga Hartarto, dan PKB melalui Ketum Cak Imin atau Muhaimin Iskandar, sudah melakukan pertemuan. Komunikasi kedua partai disebut intens.&#39;]], [[&#39;Mendagri Tito Karnavian: Kalau Perppu Tidak Disetujui, Pemilu 2024 Bisa Ditunda&#39;], [&#39;Menteri Dalam Negeri Tito Karnavian bersyukur seluruh fraksi di DPR RI menyetujui Perppu tentang Perubahan tentang Pemilu; jika tidak pemilu tahun 2024 bisa ditunda.&#39;]], [[&#39;Kento Momota Berpotensi Hancur di Babak Pertama All England&#39;], [&#39;Mantan raja bulutangkis dunia, Kento Momota berjuang di babak 32 besar All England Open 2023 hari ini. Ia berjibaku kontra Kunlavut Vitidsarn dari Thailand.&#39;]], [[&#39;Saldi Isra Terpilih Jadi Wakil Ketua MK 2023-2028&#39;], [&#39;Saldi Isra terpilih menjadi Wakil Ketua Mahkamah Konstitusi (MK) dalam pemilihan yang digelar secara voting di Gedung MK, Jakarta, Rabu, 15 Maret 2023.&#39;]], [[&#39;Anwar Usman Kembali Terpilih Jadi Ketua MK Periode 2023-2028&#39;], [&#39;Anwar Usman yang juga adik ipar Presiden Joko Widodo (Jokowi) kembali jadi Ketua MK. Anwar terpilih lewat voting hingga putaran tiga.&#39;]], [[&#39;Kata Cristiano Ronaldo Usai Bawa Al Nassr ke Semifinal Piala Raja Arab Saudi&#39;], [&#39;Cristiano Ronaldo membawa Al Nassr melaju ke semifinal Piala Raja Arab Saudi 2022/23. Al Nassr menekuk Abha 3-1 dalam duel perempatfinal di Mrsool Park, Selasa 14 Maret..&#39;]], [[&#39;Siapkan 51 Dermaga, ASDP Ferry Kerahkan 225 Kapal Layani Angkutan Lebaran 2023&#39;], [&#39;Kemenhub memprediksi bahwa pada momentum mudik Lebaran 2023 nanti, akan ada sekitar 123 juta orang yang melakukan prosesi pulang kampung tahunan tersebut.&#39;]], [[&#39;Pengobatan Ini Ampuh Kurangi Efek Mabuk Alkohol&#39;], [&#39;Peneliti temukan cara cepat untuk mengurangi efek mabuk. Mereka menggunakan hormon fibroblast growth factor 21 (FGF21) sebagai pengobatan yang diuji pada hewan tikus.&#39;]], [[&#39;Sang Juara Dunia Tragis di Istora Sebelum Tersingkir di Babak Pertama All England&#39;], [&#39;Kejutan terjadi di babak pertama All England Open 2023. Tunggal putra Singapura, Loh Kean Yew tersingkir.&#39;]], [[&#39;China Reissues Visas for Foreigners in All Categories&#39;], [&#39;China said it will start re-issuing all categories of visas to foreigners from Wednesday.&#39;]], [[&#39;Kasus DBD Meningkat di Jayapura, Sudah Ada yang Meninggal&#39;], [&#39;Pemerintah Kabupaten Jayapura, Papua, melalui Dinas Kesehatan (Dinkes) mengimbau kepada masyarakat untuk meningkatkan kewaspadaan terhadap meningkatnya penyebaran DBD.&#39;]], [[&#39;Tersingkir di Babak Pertama All England, Ini 5 Fakta Menarik Loh Kean Yew&#39;], [&#39;Loh Kean Yew harus mengalami kekalahan perdana di BWF World Tour 1000 All England Open 2023. Ia harus tersingkir oleh wakil asal China yaitu Zhao Jun Peng.&#39;]], [[&#39;Intip Harta Kekayaan Ajudan Pribadi yang Ditangkap Terkait Penipuan Rp 1,3 Miliar&#39;], [&#39;Muhammad Akbar Pera Baharudin atau lebih dikenal Ajudan Pribadi saat ditangkap polisi terkait penipuan hingga Rp 1,3 miliar.&#39;]], [[&#39;Selain Disekap, Band Radja Ngaku Diintimidasi: Udah Lebih Rendah dari Maling&#39;], [&#39;Grup band Radja saat ini tengah ramai diperbincangkan warganet dan diberitakan oleh banyak media. Hal itu dikarenakan para personelnya diduga mendapat ancaman pembunuhan.&#39;]], [[&#39;Ketua KPK: Korupsi Itu Terjadi karena Kurangnya Integritas&#39;], [&#39;Ketua KPK Firli Bahuri mengingatkan, masyarakat tidak bisa berpolitik tanpa cerdas dan berintegritas; korupsi itu terjadi karena kurangnya integritas.&#39;]], [[&#39;Respon Sugeng IPW Dilaporkan Aspri Wamenkumham ke Bareskrim&#39;], [&#39;Ketua Indonesia Police Watch (IPW), Sugeng Teguh Santoso angkat bicara terkait dilaporkan balik oleh Yogi Ari Rukmana, Asisten Pribadi Wakil Menteri Hukum dan HAM.&#39;]], [[&#39;Punya Rumah Rp300 M, Ayah Alshad Ahmad Ternyata Pernah Jadi Pegawai Pajak&#39;], [&#39;Alshad Ahmad dikenal sebagai sosok kaya raya yang juga hobi memelihara hewan-hewan buas dan langka. Kekayaan sepupu Raffi Ahmad bisa dilihat dari rumah yang ditinggali.&#39;]], [[&#39;Masih Ingat Jessica Wongso? Divonis 20 Tahun karena Kasus Kopi Sianida, Ini Kabar Terbarunya&#39;], [&#39;Jessica Wongso dinyatakan sebagai tersangka pada akhir Januari 2016, sebelum akhirnya divonis bersalah oleh Pengadilan Negeri Jakarta Pusat pada 27 Oktober 2016.&#39;]], [[&#39;10 Fakta Kepala Desa Disuntik Mati, Oknum TNI AD Dalangi Perampokan Duit ATM&#39;], [&#39;Peristiwa tewasnya Kepala Desa Curug Goong, Padarincang, Kabupaten Serang, bernama Salamunasir, menggegerkan warga setempat. Salamunasir diketahui tewas disuntik mati.&#39;]], [[&#39;Kisruh! Umat Kelenteng Hok Swie Bio Tolak Serahkan Tanah ke Go Kian An&#39;], [&#39;Puluhan umat Tempat Ibadah Tri Dharma (TITD) Kelenteng Hok Swie Bio menolak menyerahkan sertifikat tanah ke Go Kian An.&#39;]], [[&#39;Aturan Baru Pemerintah jadi Kabar Buruk untuk Samsung, iPhone, Xiaomi dan Vivo&#39;], [&#39;Pemerintah akan segera memaksa produsen ponsel pintar atau smartphone untuk mengizinkan pengguna menghapus aplikasi yang sudah diinstal sebelumnya, menurut laporan resmi.&#39;]], [[&#39;Bjorka Diminta Umbar Data Pribadi Mantan Presiden Indonesia&#39;], [&#39;Hacker Bjorka diminta membocorkan data pribadi Menteri Keuangan Sri Mulyani\xa0Indrawati, Teddy Minahasa, hingga mantan Presiden RI ke-5\xa0Megawati Soekarnoputri. &quot;Next week\&#39;.&#39;]], [[&#39;6 Ciri Aki Motor yang Bisa Disterum Ulang atau Harus Diganti&#39;], [&#39;Aki motor menjadi salah satu komponen terpenting pada motor, sebab jadi sumber aktifasi komponen elektrikal pada motor. Lalu bagaimana ciri-ciri aki yang sudah tak bagus?&#39;]], [[&#39;Tak Lagi di Ancol, Balap Formula E 2024 Kemungkinan Digelar di Jalan Sudirman&#39;], [&#39;Balap Formula E pada 2024 ada kemungkinan tidak akan digelar di Sirkuit Ancol, Jakarta Utara. Balap jet darat bertenaga listrik itu akan digelar di sirkut jalanan.&#39;]]]
 </pre></div>
 </div>
 </div>
@@ -412,7 +429,7 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe">
+  <div id="df-a072988e-000a-4330-a922-ecd59d4b6b05">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -439,178 +456,178 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
   <tbody>
     <tr>
       <th>0</th>
-      <td>Profil Abby Choi, Model Hong Kong yang Dimutil...</td>
-      <td>Model cantik asal Hong Kong, Abby Choi (28thn)...</td>
+      <td>Kembali Jadi Soroton, Ini Kilas Balik Kasus Ko...</td>
+      <td>Nama Jessica Kumala Wongso kembali menjadi sor...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Sebelum Dimutilasi, Abby Choi Masih Berhubunga...</td>
-      <td>Kematian tragis dialami oleh influencer sekali...</td>
+      <td>Dicecar 26 Pertanyaan, Johnny G Plate Tolak Ta...</td>
+      <td>Menkominfo, Johnny G Plate telah selesai menja...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Richard Eliezer Akan Dieksekusi ke Lapas Salem...</td>
-      <td>Pelaksanaan eksekusi ini guna menjamin hak-hak...</td>
+      <td>Dirjen Pajak Janji Lakukan Perbaikan di DJP Tu...</td>
+      <td>Direktorat Jenderal Pajak (DJP) Kementerian Ke...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Pantes Glowing, Verrell Bramasta Ternyata Mand...</td>
-      <td>Baru-baru ini artis Verrell Bramasta menjadi s...</td>
+      <td>Ahli: Belum Ada Negara yang Wajibkan Pelabelan...</td>
+      <td>Menurut ahli, mengacu hasil kajian lembaga pen...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>AS Ancam Ada Konsekuensi Serius Akan Ditanggun...</td>
-      <td>Keputusan membantu Moskow, termasuk memberikan...</td>
+      <td>THE STORIES SEASON 2: Balada Cerita Ramadhan 2...</td>
+      <td>Balada Cerita Ramadhan merupakan program unggu...</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>Capres Sudah di Kantong Megawati, Hasto: Kami ...</td>
-      <td>PDIP menyebut ketua umumnya, Megawati Soekarno...</td>
+      <td>Kemenkes Mulai Susun Daftar Isian Masukan RUU ...</td>
+      <td>RUU Kesehatan nantinya akan menjadi landasan b...</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>Pembunuhan Sadis Abby Choi Didalangi Mantan Su...</td>
-      <td>Kasus pembunuhan model dan sosialita Hong Kong...</td>
+      <td>Mark Zuckerberg Pecat Lagi 10 Ribu Karyawan</td>
+      <td>Kepala Eksekutif Meta Mark Zuckerberg akan mem...</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>Adik Buka Suara Soal Isu Perceraian Indra Bekt...</td>
-      <td>Kabar tidak sedap tengah menerpa pasangan Indr...</td>
+      <td>Johnny G Plate Rampung Diperiksa Kejagung di K...</td>
+      <td>Menteri Komunikasi dan Informatika, Johnny G P...</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>Survei IndoStrategi: Prabowo Subianto Puncaki ...</td>
-      <td>Ketua Umum Partai Gerindra, juga Capres 2024, ...</td>
+      <td>Hashim Bilang Cak Imin Belum Pasti, Pengamat S...</td>
+      <td>Partai Golkar, melalui Ketum Airlangga Hartart...</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>Petaka Barcelona di Markas Almeria</td>
-      <td>Kekalahan ini tidak mengubah posisi Barcelona ...</td>
+      <td>Mendagri Tito Karnavian: Kalau Perppu Tidak Di...</td>
+      <td>Menteri Dalam Negeri Tito Karnavian bersyukur ...</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>Hindari Politisasi Pemilu 2024, DMI se-Sumater...</td>
-      <td>Muktamar DMI ke-VIII diharapkan bisa berlangsu...</td>
+      <td>Kento Momota Berpotensi Hancur di Babak Pertam...</td>
+      <td>Mantan raja bulutangkis dunia, Kento Momota be...</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>IHSG Berpotensi Menguat Terdorong Derasnya Cap...</td>
-      <td>Indeks harga saham gabungan atau IHSG melemah ...</td>
+      <td>Saldi Isra Terpilih Jadi Wakil Ketua MK 2023-2028</td>
+      <td>Saldi Isra terpilih menjadi Wakil Ketua Mahkam...</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>AS Klaim COVID-19 Muncul Akibat Kebocoran Labo...</td>
-      <td>Orang-orang yang membaca laporan rahasia terse...</td>
+      <td>Anwar Usman Kembali Terpilih Jadi Ketua MK Per...</td>
+      <td>Anwar Usman yang juga adik ipar Presiden Joko ...</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>Brimob Gadungan di Makassar Ternyata Sering Ik...</td>
-      <td>Pria bernama Haerul yang sudah 5 tahun menjadi...</td>
+      <td>Kata Cristiano Ronaldo Usai Bawa Al Nassr ke S...</td>
+      <td>Cristiano Ronaldo membawa Al Nassr melaju ke s...</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>Mualaf Sejak Usia 14 Tahun, David Dijanjikan I...</td>
-      <td>Alissa Qotrunnada Wahid, Putri Presiden RI ke ...</td>
+      <td>Siapkan 51 Dermaga, ASDP Ferry Kerahkan 225 Ka...</td>
+      <td>Kemenhub memprediksi bahwa pada momentum mudik...</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>Profil Istri Rafael Alun Trisambodo Suka Pamer...</td>
-      <td>Istri Rafael Alun Trisambodo juga kena imbas a...</td>
+      <td>Pengobatan Ini Ampuh Kurangi Efek Mabuk Alkohol</td>
+      <td>Peneliti temukan cara cepat untuk mengurangi e...</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>Tengkorak Model Hong Kong Abby Choi Ditemukan ...</td>
-      <td>Bagian tubuh Abby Choi ditemukan di salah satu...</td>
+      <td>Sang Juara Dunia Tragis di Istora Sebelum Ters...</td>
+      <td>Kejutan terjadi di babak pertama All England O...</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>Deretan Rumah Mewah Milik Rafael Alun Trisambo...</td>
-      <td>Harta kekayaan dan rumah mewah yang dimiliki o...</td>
+      <td>China Reissues Visas for Foreigners in All Cat...</td>
+      <td>China said it will start re-issuing all catego...</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>Imigrasi Malaysia Tahan Pasutri dan 13 WNI Dal...</td>
-      <td>Departemen Imigrasi Malaysia (JIM) menahan sep...</td>
+      <td>Kasus DBD Meningkat di Jayapura, Sudah Ada yan...</td>
+      <td>Pemerintah Kabupaten Jayapura, Papua, melalui ...</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>Sadis! Masalah Harta Diduga Jadi Motif Pembunu...</td>
-      <td>Menurut keterangan inspektur polisi, rupanya a...</td>
+      <td>Tersingkir di Babak Pertama All England, Ini 5...</td>
+      <td>Loh Kean Yew harus mengalami kekalahan perdana...</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>5 Fakta Menarik AC Milan saat Tumbangkan Atalanta</td>
-      <td>AC Milan berhasil mraih poin sempurna saat men...</td>
+      <td>Intip Harta Kekayaan Ajudan Pribadi yang Ditan...</td>
+      <td>Muhammad Akbar Pera Baharudin atau lebih diken...</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>Singgung Profesi Dokter, Jerome Polin Kena Huj...</td>
-      <td>Jerome Polin mendapatkan kabar kurang sedap se...</td>
+      <td>Selain Disekap, Band Radja Ngaku Diintimidasi:...</td>
+      <td>Grup band Radja saat ini tengah ramai diperbin...</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>6 Fakta Wanita Potong Alat Kelamin Selingkuhan...</td>
-      <td>Sedang viral seorang wanita yang nekat memoton...</td>
+      <td>Ketua KPK: Korupsi Itu Terjadi karena Kurangny...</td>
+      <td>Ketua KPK Firli Bahuri mengingatkan, masyaraka...</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>Pria Tidak Menikah Memiliki Risiko Kematian ya...</td>
-      <td>Pria yang tidak pernah menikah menghadapi risi...</td>
+      <td>Respon Sugeng IPW Dilaporkan Aspri Wamenkumham...</td>
+      <td>Ketua Indonesia Police Watch (IPW), Sugeng Teg...</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>Ketum PPP Beri Lampu Hijau Usung Yudi Lasminin...</td>
-      <td>Partai Persatuan Pembangunan (PPP) mulai merap...</td>
+      <td>Punya Rumah Rp300 M, Ayah Alshad Ahmad Ternyat...</td>
+      <td>Alshad Ahmad dikenal sebagai sosok kaya raya y...</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>Pacar Mario Dandy Sindir Para Artis, Model Hon...</td>
-      <td>Kasus penganiayaan oleh Mario Dandy terus menj...</td>
+      <td>Masih Ingat Jessica Wongso? Divonis 20 Tahun k...</td>
+      <td>Jessica Wongso dinyatakan sebagai tersangka pa...</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>Wanita Ini Potong Alat Kelamin Selingkuhan Kar...</td>
-      <td>Seorang wanita berinsial AST (28) nekat memoto...</td>
+      <td>10 Fakta Kepala Desa Disuntik Mati, Oknum TNI ...</td>
+      <td>Peristiwa tewasnya Kepala Desa Curug Goong, Pa...</td>
     </tr>
     <tr>
       <th>27</th>
-      <td>5 Artikel Populer: Irjen Fadil Mau Dilaporkan,...</td>
-      <td>Ada 5 artikel yang menarik pembaca dan masuk p...</td>
+      <td>Kisruh! Umat Kelenteng Hok Swie Bio Tolak Sera...</td>
+      <td>Puluhan umat Tempat Ibadah Tri Dharma (TITD) K...</td>
     </tr>
     <tr>
       <th>28</th>
-      <td>Komjen Ahmad Dofiri: Adhi Makayasa Akpol 89, P...</td>
-      <td>Komisaris Jenderal (Komjen) Polisi, Ahmad Dofi...</td>
+      <td>Aturan Baru Pemerintah jadi Kabar Buruk untuk ...</td>
+      <td>Pemerintah akan segera memaksa produsen ponsel...</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>5 Fakta Terbaru Penganiayaan Mario Dandy ke Da...</td>
-      <td>Ramai beredar video di media sosial penganiaya...</td>
+      <td>Bjorka Diminta Umbar Data Pribadi Mantan Presi...</td>
+      <td>Hacker Bjorka diminta membocorkan data pribadi...</td>
     </tr>
     <tr>
       <th>30</th>
-      <td>Ketika Bos Esemka Goda Kaesang Pangarep Beli M...</td>
-      <td>Putra Presiden Joko Widodo, Kaesang Pangarep, ...</td>
+      <td>6 Ciri Aki Motor yang Bisa Disterum Ulang atau...</td>
+      <td>Aki motor menjadi salah satu komponen terpenti...</td>
     </tr>
     <tr>
       <th>31</th>
-      <td>Terjebak Nostalgia Bersama Suzuki Grand Vitara...</td>
-      <td>PT Suzuki Indomobil Sales membuat kejutan pada...</td>
+      <td>Tak Lagi di Ancol, Balap Formula E 2024 Kemung...</td>
+      <td>Balap Formula E pada 2024 ada kemungkinan tida...</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a072988e-000a-4330-a922-ecd59d4b6b05')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
-
+        
   <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
        width="24px">
     <path d="M0 0h24v24H0V0z" fill="none"/>
     <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
   </svg>
       </button>
-
+      
   <style>
     .colab-df-container {
       display:flex;
@@ -651,12 +668,12 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 
       <script>
         const buttonEl =
-          document.querySelector('#df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe button.colab-df-convert');
+          document.querySelector('#df-a072988e-000a-4330-a922-ecd59d4b6b05 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-dd6a71a7-5111-4cbd-9f32-0f10cb8280fe');
+          const element = document.querySelector('#df-a072988e-000a-4330-a922-ecd59d4b6b05');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -675,7 +692,7 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
       </script>
     </div>
   </div>
-</div></div>
+  </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,31 +713,31 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span>   <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>   <span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">100</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>       <span class="n">mountpoint</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
 
-<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>       <span class="s1">&#39;TBE_EPHEM_CREDS_ADDR&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">ephemeral</span> <span class="k">else</span> <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TBE_CREDS_ADDR&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">123</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> 
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
 
-<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span>   <span class="n">request_id</span> <span class="o">=</span> <span class="n">send_request</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">171</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">177</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
 
-<span class="nn">/usr/local/lib/python3.8/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
 <span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">97</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span>       <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">if</span> <span class="p">(</span><span class="n">reply</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;colab_reply&#39;</span> <span class="ow">and</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">if</span> <span class="p">(</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -749,43 +766,85 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="CrawlingTugasAkhir.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Crawling Tugas Akhir</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="CrawlingTugasAkhir.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crawling Tugas Akhir</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Pipelines.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tugas Pipelines</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By The Jupyter Book Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By The Jupyter Book Community
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
