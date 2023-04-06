@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 </ul>
 
     </div>
@@ -374,6 +375,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#export-model">Export Model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-klasifikasi">Hasil Klasifikasi</a></li>
 </ul>
 
             </nav>
@@ -400,7 +402,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-9b8ebc6d-6893-4879-9bf5-c4a72bc34d16">
+  <div id="df-9b44f496-79f2-41b1-ba03-58ae30689956">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -483,7 +485,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-9b8ebc6d-6893-4879-9bf5-c4a72bc34d16')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9b44f496-79f2-41b1-ba03-58ae30689956')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -534,12 +536,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-9b8ebc6d-6893-4879-9bf5-c4a72bc34d16 button.colab-df-convert');
+          document.querySelector('#df-9b44f496-79f2-41b1-ba03-58ae30689956 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-9b8ebc6d-6893-4879-9bf5-c4a72bc34d16');
+          const element = document.querySelector('#df-9b44f496-79f2-41b1-ba03-58ae30689956');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -667,170 +669,6 @@ Name: Kelas, dtype: int64
 <h1>Training Model<a class="headerlink" href="#training-model" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from sklearn.tree import DecisionTreeClassifier</span>
-<span class="c1"># from sklearn.model_selection import GridSearchCV</span>
-
-<span class="c1"># # defining parameter range</span>
-<span class="c1"># param_grid = {&#39;criterion&#39;:[&#39;gini&#39;,&#39;entropy&#39;, &#39;log_loss&#39;],&#39;max_depth&#39;:[10, 20, 30, None]}</span>
-
-<span class="c1"># grid = GridSearchCV(DecisionTreeClassifier(), param_grid, scoring=&#39;roc_auc_ovr&#39;, cv=10, verbose=3)</span>
-
-<span class="c1"># # fitting the model for grid search</span>
-<span class="c1"># grid.fit(X_train_resampled, y_train_resampled)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-
-<span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-
-<span class="n">model_gnb</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="n">prediction_gnb</span> <span class="o">=</span> <span class="n">model_gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">ValueError</span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-9-4a4d5ad36e83&gt;</span> in <span class="ni">&lt;cell line: 5&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">model_gnb</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">prediction_gnb</span> <span class="o">=</span> <span class="n">model_gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/naive_bayes.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">267</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_partial_fit</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>             <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">_refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>         <span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/naive_bayes.py</span> in <span class="ni">_partial_fit</span><span class="nt">(self, X, y, classes, _refit, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> 
-<span class="g g-Whitespace">    </span><span class="mi">427</span>         <span class="n">first_call</span> <span class="o">=</span> <span class="n">_check_partial_fit_first_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">classes</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">428</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="n">first_call</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">429</span>         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">430</span>             <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">_check_sample_weight</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">584</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span> 
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span> 
-<span class="ne">-&gt; </span><span class="mi">1106</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>         <span class="n">accept_sparse</span><span class="o">=</span><span class="n">accept_sparse</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>                 <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">879</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">_asarray_with_order</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">xp</span><span class="o">=</span><span class="n">xp</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>             <span class="k">except</span> <span class="n">ComplexWarning</span> <span class="k">as</span> <span class="n">complex_warning</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/_array_api.py</span> in <span class="ni">_asarray_with_order</span><span class="nt">(array, dtype, order, copy, xp)</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="k">if</span> <span class="n">xp</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;numpy.array_api&quot;</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="c1"># Use NumPy API to support order</span>
-<span class="ne">--&gt; </span><span class="mi">185</span>         <span class="n">array</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>         <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/series.py</span> in <span class="ni">__array__</span><span class="nt">(self, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>               <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">872</span><span class="s2">         return np.asarray(self._values, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">873</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span><span class="s2">     # ----------------------------------------------------------------------</span>
-
-<span class="ne">ValueError</span>: could not convert string to float: &#39;sistem rekomendasi aplikasi information filtering cari rekomendasi item informasi produk laya user dasar prediksi sifat personal teliti bahas sistem rekomendasi kuliner kabupaten bangkal sampang metode item based collaborative filtering metode dasar sama beri rating item item rating user dasar peneliltian hasil efektif metode item based collaborative filtering rekomendasi kuliner sesuai selera konsumen capai nilai kuat total responden&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
-
-<span class="c1"># Buat pengklasifikasi KNN</span>
-<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<span class="c1"># Sesuaikan pengklasifikasi dengan data</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-10-682b2485deb2&gt;</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Sesuaikan pengklasifikasi dengan data</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/neighbors/_classification.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y)</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span> 
-<span class="ne">--&gt; </span><span class="mi">215</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> 
-<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/neighbors/_base.py</span> in <span class="ni">_fit</span><span class="nt">(self, X, y)</span>
-<span class="g g-Whitespace">    </span><span class="mi">452</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_tags</span><span class="p">()[</span><span class="s2">&quot;requires_y&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span>             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">(</span><span class="n">KDTree</span><span class="p">,</span> <span class="n">BallTree</span><span class="p">,</span> <span class="n">NeighborsBase</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">454</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span>                     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">456</span>                 <span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">584</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span> 
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1105</span> 
-<span class="ne">-&gt; </span><span class="mi">1106</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1107</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span>         <span class="n">accept_sparse</span><span class="o">=</span><span class="n">accept_sparse</span><span class="p">,</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>                 <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">879</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">_asarray_with_order</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">xp</span><span class="o">=</span><span class="n">xp</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>             <span class="k">except</span> <span class="n">ComplexWarning</span> <span class="k">as</span> <span class="n">complex_warning</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/_array_api.py</span> in <span class="ni">_asarray_with_order</span><span class="nt">(array, dtype, order, copy, xp)</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="k">if</span> <span class="n">xp</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;numpy.array_api&quot;</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="c1"># Use NumPy API to support order</span>
-<span class="ne">--&gt; </span><span class="mi">185</span>         <span class="n">array</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>         <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/series.py</span> in <span class="ni">__array__</span><span class="nt">(self, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>               <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">872</span><span class="s2">         return np.asarray(self._values, dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">873</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span><span class="s2">     # ----------------------------------------------------------------------</span>
-
-<span class="ne">ValueError</span>: could not convert string to float: &#39;sistem rekomendasi aplikasi information filtering cari rekomendasi item informasi produk laya user dasar prediksi sifat personal teliti bahas sistem rekomendasi kuliner kabupaten bangkal sampang metode item based collaborative filtering metode dasar sama beri rating item item rating user dasar peneliltian hasil efektif metode item based collaborative filtering rekomendasi kuliner sesuai selera konsumen capai nilai kuat total responden&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tabel hasil GridSearchCV</span>
 <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
 <span class="n">results_df</span>
@@ -838,405 +676,16 @@ Name: Kelas, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-1b5c122b-58cc-4d61-900c-fdf5773ce1b2">
-    <div class="colab-df-container">
-      <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-8-4ca1db73282f&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Tabel hasil GridSearchCV</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">results_df</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>mean_fit_time</th>
-      <th>std_fit_time</th>
-      <th>mean_score_time</th>
-      <th>std_score_time</th>
-      <th>param_criterion</th>
-      <th>param_max_depth</th>
-      <th>params</th>
-      <th>split0_test_score</th>
-      <th>split1_test_score</th>
-      <th>split2_test_score</th>
-      <th>split3_test_score</th>
-      <th>split4_test_score</th>
-      <th>split5_test_score</th>
-      <th>split6_test_score</th>
-      <th>split7_test_score</th>
-      <th>split8_test_score</th>
-      <th>split9_test_score</th>
-      <th>mean_test_score</th>
-      <th>std_test_score</th>
-      <th>rank_test_score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.085980</td>
-      <td>0.005714</td>
-      <td>0.004463</td>
-      <td>0.000388</td>
-      <td>gini</td>
-      <td>10</td>
-      <td>{'criterion': 'gini', 'max_depth': 10}</td>
-      <td>0.764308</td>
-      <td>0.816311</td>
-      <td>0.833930</td>
-      <td>0.789815</td>
-      <td>0.843796</td>
-      <td>0.854352</td>
-      <td>0.924352</td>
-      <td>0.896574</td>
-      <td>0.867407</td>
-      <td>0.902963</td>
-      <td>0.849381</td>
-      <td>0.048185</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.107607</td>
-      <td>0.006027</td>
-      <td>0.004620</td>
-      <td>0.001227</td>
-      <td>gini</td>
-      <td>20</td>
-      <td>{'criterion': 'gini', 'max_depth': 20}</td>
-      <td>0.760763</td>
-      <td>0.769057</td>
-      <td>0.735811</td>
-      <td>0.775000</td>
-      <td>0.840185</td>
-      <td>0.833333</td>
-      <td>0.908333</td>
-      <td>0.858333</td>
-      <td>0.850000</td>
-      <td>0.883333</td>
-      <td>0.821415</td>
-      <td>0.054741</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.108876</td>
-      <td>0.006197</td>
-      <td>0.004135</td>
-      <td>0.000227</td>
-      <td>gini</td>
-      <td>30</td>
-      <td>{'criterion': 'gini', 'max_depth': 30}</td>
-      <td>0.752159</td>
-      <td>0.752256</td>
-      <td>0.752706</td>
-      <td>0.800000</td>
-      <td>0.825000</td>
-      <td>0.850000</td>
-      <td>0.883333</td>
-      <td>0.875000</td>
-      <td>0.850000</td>
-      <td>0.875000</td>
-      <td>0.821545</td>
-      <td>0.050973</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.112841</td>
-      <td>0.007782</td>
-      <td>0.004611</td>
-      <td>0.000862</td>
-      <td>gini</td>
-      <td>None</td>
-      <td>{'criterion': 'gini', 'max_depth': None}</td>
-      <td>0.752430</td>
-      <td>0.735681</td>
-      <td>0.760723</td>
-      <td>0.808333</td>
-      <td>0.816667</td>
-      <td>0.850000</td>
-      <td>0.900000</td>
-      <td>0.883333</td>
-      <td>0.866667</td>
-      <td>0.891667</td>
-      <td>0.826550</td>
-      <td>0.057907</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.166763</td>
-      <td>0.008371</td>
-      <td>0.006519</td>
-      <td>0.001147</td>
-      <td>entropy</td>
-      <td>10</td>
-      <td>{'criterion': 'entropy', 'max_depth': 10}</td>
-      <td>0.751478</td>
-      <td>0.748865</td>
-      <td>0.876589</td>
-      <td>0.792593</td>
-      <td>0.843148</td>
-      <td>0.876852</td>
-      <td>0.918148</td>
-      <td>0.852778</td>
-      <td>0.903426</td>
-      <td>0.928611</td>
-      <td>0.849249</td>
-      <td>0.061956</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.194348</td>
-      <td>0.008681</td>
-      <td>0.007215</td>
-      <td>0.002184</td>
-      <td>entropy</td>
-      <td>20</td>
-      <td>{'criterion': 'entropy', 'max_depth': 20}</td>
-      <td>0.752654</td>
-      <td>0.735407</td>
-      <td>0.801895</td>
-      <td>0.775000</td>
-      <td>0.775000</td>
-      <td>0.841667</td>
-      <td>0.908333</td>
-      <td>0.791667</td>
-      <td>0.866667</td>
-      <td>0.900000</td>
-      <td>0.814829</td>
-      <td>0.057840</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.156928</td>
-      <td>0.031288</td>
-      <td>0.006564</td>
-      <td>0.002508</td>
-      <td>entropy</td>
-      <td>30</td>
-      <td>{'criterion': 'entropy', 'max_depth': 30}</td>
-      <td>0.736212</td>
-      <td>0.727390</td>
-      <td>0.826804</td>
-      <td>0.758333</td>
-      <td>0.775000</td>
-      <td>0.825000</td>
-      <td>0.891667</td>
-      <td>0.816667</td>
-      <td>0.850000</td>
-      <td>0.925000</td>
-      <td>0.813207</td>
-      <td>0.061731</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0.134534</td>
-      <td>0.006581</td>
-      <td>0.005028</td>
-      <td>0.001308</td>
-      <td>entropy</td>
-      <td>None</td>
-      <td>{'criterion': 'entropy', 'max_depth': None}</td>
-      <td>0.727879</td>
-      <td>0.719011</td>
-      <td>0.802120</td>
-      <td>0.775000</td>
-      <td>0.766667</td>
-      <td>0.808333</td>
-      <td>0.883333</td>
-      <td>0.808333</td>
-      <td>0.858333</td>
-      <td>0.891667</td>
-      <td>0.804068</td>
-      <td>0.056767</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.152859</td>
-      <td>0.040375</td>
-      <td>0.006752</td>
-      <td>0.003319</td>
-      <td>log_loss</td>
-      <td>10</td>
-      <td>{'criterion': 'log_loss', 'max_depth': 10}</td>
-      <td>0.763395</td>
-      <td>0.750806</td>
-      <td>0.887731</td>
-      <td>0.792778</td>
-      <td>0.844074</td>
-      <td>0.876852</td>
-      <td>0.927222</td>
-      <td>0.839167</td>
-      <td>0.885833</td>
-      <td>0.929630</td>
-      <td>0.849749</td>
-      <td>0.060414</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.304488</td>
-      <td>0.077464</td>
-      <td>0.012477</td>
-      <td>0.008300</td>
-      <td>log_loss</td>
-      <td>20</td>
-      <td>{'criterion': 'log_loss', 'max_depth': 20}</td>
-      <td>0.727654</td>
-      <td>0.727299</td>
-      <td>0.793653</td>
-      <td>0.791667</td>
-      <td>0.758333</td>
-      <td>0.825000</td>
-      <td>0.866667</td>
-      <td>0.800000</td>
-      <td>0.858333</td>
-      <td>0.891667</td>
-      <td>0.804027</td>
-      <td>0.053924</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.399866</td>
-      <td>0.110641</td>
-      <td>0.016710</td>
-      <td>0.012138</td>
-      <td>log_loss</td>
-      <td>30</td>
-      <td>{'criterion': 'log_loss', 'max_depth': 30}</td>
-      <td>0.711437</td>
-      <td>0.710678</td>
-      <td>0.818471</td>
-      <td>0.775000</td>
-      <td>0.758333</td>
-      <td>0.833333</td>
-      <td>0.875000</td>
-      <td>0.808333</td>
-      <td>0.875000</td>
-      <td>0.900000</td>
-      <td>0.806559</td>
-      <td>0.063659</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.263665</td>
-      <td>0.119404</td>
-      <td>0.007819</td>
-      <td>0.003062</td>
-      <td>log_loss</td>
-      <td>None</td>
-      <td>{'criterion': 'log_loss', 'max_depth': None}</td>
-      <td>0.719771</td>
-      <td>0.719057</td>
-      <td>0.810362</td>
-      <td>0.766667</td>
-      <td>0.775000</td>
-      <td>0.841667</td>
-      <td>0.875000</td>
-      <td>0.783333</td>
-      <td>0.866667</td>
-      <td>0.891667</td>
-      <td>0.804919</td>
-      <td>0.059225</td>
-      <td>10</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ne">NameError</span>: name &#39;grid&#39; is not defined
+</pre></div>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-1b5c122b-58cc-4d61-900c-fdf5773ce1b2')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-      
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-1b5c122b-58cc-4d61-900c-fdf5773ce1b2 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-1b5c122b-58cc-4d61-900c-fdf5773ce1b2');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-  </div></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1479,63 +928,6 @@ Name: Kelas, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/7d5dd361263417d8f49fe6d7897c0564dee44a3c8890c727f76e8ddc501564ce.png" src="../_images/7d5dd361263417d8f49fe6d7897c0564dee44a3c8890c727f76e8ddc501564ce.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span> <span class="o">=</span> <span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_resampled</span><span class="p">,</span><span class="n">y_train_resampled</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation of models:
- criterion      log_loss_10   gini_10  entropy_10  gini_None   gini_30  \
-criterion                                                               
-log_loss_10       1.000000  0.818640    0.989010   0.753463  0.705629   
-gini_10           0.818640  1.000000    0.848210   0.859542  0.862974   
-entropy_10        0.989010  0.848210    1.000000   0.805829  0.762235   
-gini_None         0.753463  0.859542    0.805829   1.000000  0.988998   
-gini_30           0.705629  0.862974    0.762235   0.988998  1.000000   
-gini_20           0.675757  0.872925    0.715641   0.930223  0.953318   
-entropy_20        0.919245  0.798676    0.917156   0.824149  0.771939   
-entropy_30        0.955068  0.854518    0.953439   0.810670  0.756182   
-log_loss_30       0.940427  0.809049    0.961380   0.830543  0.769363   
-log_loss_None     0.956263  0.792784    0.965815   0.806430  0.755896   
-entropy_None      0.931797  0.844587    0.946680   0.865446  0.804711   
-log_loss_20       0.895716  0.787881    0.917190   0.856408  0.797484   
-
-criterion       gini_20  entropy_20  entropy_30  log_loss_30  log_loss_None  \
-criterion                                                                     
-log_loss_10    0.675757    0.919245    0.955068     0.940427       0.956263   
-gini_10        0.872925    0.798676    0.854518     0.809049       0.792784   
-entropy_10     0.715641    0.917156    0.953439     0.961380       0.965815   
-gini_None      0.930223    0.824149    0.810670     0.830543       0.806430   
-gini_30        0.953318    0.771939    0.756182     0.769363       0.755896   
-gini_20        1.000000    0.773327    0.736586     0.700339       0.717967   
-entropy_20     0.773327    1.000000    0.956050     0.954263       0.974624   
-entropy_30     0.736586    0.956050    1.000000     0.965576       0.959172   
-log_loss_30    0.700339    0.954263    0.965576     1.000000       0.984583   
-log_loss_None  0.717967    0.974624    0.959172     0.984583       1.000000   
-entropy_None   0.771095    0.970528    0.977004     0.983657       0.969068   
-log_loss_20    0.737787    0.964470    0.952050     0.985773       0.973110   
-
-criterion      entropy_None  log_loss_20  
-criterion                                 
-log_loss_10        0.931797     0.895716  
-gini_10            0.844587     0.787881  
-entropy_10         0.946680     0.917190  
-gini_None          0.865446     0.856408  
-gini_30            0.804711     0.797484  
-gini_20            0.771095     0.737787  
-entropy_20         0.970528     0.964470  
-entropy_30         0.977004     0.952050  
-log_loss_30        0.983657     0.985773  
-log_loss_None      0.969068     0.973110  
-entropy_None       1.000000     0.983146  
-log_loss_20        0.983146     1.000000  
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1838,6 +1230,70 @@ Abstrak Skripsi: Setiap perusahaan mengharapkan adanya hubungan baik dengan pela
 </div>
 </div>
 </div>
+<div class="tex2jax_ignore mathjax_ignore section" id="hasil-klasifikasi">
+<h1>Hasil Klasifikasi<a class="headerlink" href="#hasil-klasifikasi" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Load dataset abstrak skripsi</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/ProyekSainsData/tugas/uts/dataset-pta-fix.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Membagi dataset menjadi data training dan testing</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Membuat vektor fitur dengan menggunakan CountVectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">X_train_vectorized</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_vectorized</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Melakukan reduksi data dengan menggunakan PCA</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">X_train_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_vectorized</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+<span class="n">X_test_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_vectorized</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+
+<span class="c1"># Melakukan normalisasi data dengan menggunakan StandardScaler</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train_pca</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_pca</span><span class="p">)</span>
+<span class="n">X_test_pca</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_pca</span><span class="p">)</span>
+
+<span class="c1"># Membuat model klasifikasi Gaussian Naive Bayes</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_pca</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Membuat model klasifikasi K-Nearest Neighbor</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_pca</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Melakukan prediksi terhadap data testing</span>
+<span class="n">y_pred_nb</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_pca</span><span class="p">)</span>
+<span class="n">y_pred_knn</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_pca</span><span class="p">)</span>
+
+<span class="c1"># Menghitung akurasi dari model klasifikasi</span>
+<span class="n">accuracy_nb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_nb</span><span class="p">)</span>
+<span class="n">accuracy_knn</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_knn</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Akurasi Naive Bayes: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_nb</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Akurasi K-Nearest Neighbor: </span><span class="si">{:.2f}</span><span class="s1">%&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_knn</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi Naive Bayes: 80.86%
+Akurasi K-Nearest Neighbor: 76.54%
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1906,6 +1362,7 @@ Abstrak Skripsi: Setiap perusahaan mengharapkan adanya hubungan baik dengan pela
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#export-model">Export Model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-klasifikasi">Hasil Klasifikasi</a></li>
 </ul>
 
   </nav></div>
