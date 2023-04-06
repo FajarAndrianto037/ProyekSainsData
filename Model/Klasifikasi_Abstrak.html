@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Load Preprocessed Data &#8212; Proyek Sains Data</title>
+    <title>Proses Klasifikasi &#8212; Proyek Sains Data</title>
   
   
   
@@ -159,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../CrawlingTugasAkhir.html">Crawling Tugas Akhir</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../CrawlingPortalBerita.html">Crawling Portal Berita</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pipelines.html">Tugas Pipelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prepo/Preprosesing.html">Load Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prepo/Preprosesing.html">Preprosesing</a></li>
 
 
 </ul>
@@ -345,7 +345,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Load Preprocessed Data</h1>
+    <h1>Proses Klasifikasi</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,13 +355,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Load Preprocessed Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Proses Klasifikasi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data">Split Data</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction-tf-idf">Feature Extraction: TF-IDF</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oversampling-smote">Oversampling: SMOTE</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-model">Training Model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Training Model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#export-model">Export Model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
@@ -377,8 +376,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="load-preprocessed-data">
-<h1>Load Preprocessed Data<a class="headerlink" href="#load-preprocessed-data" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="proses-klasifikasi">
+<h1>Proses Klasifikasi<a class="headerlink" href="#proses-klasifikasi" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -391,7 +390,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-cdc7493b-a49d-47c4-af29-497d52aa1ee4">
+  <div id="df-9f474b81-c873-4b05-8bda-2c34d13835d8">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -474,7 +473,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-cdc7493b-a49d-47c4-af29-497d52aa1ee4')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9f474b81-c873-4b05-8bda-2c34d13835d8')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -525,12 +524,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-cdc7493b-a49d-47c4-af29-497d52aa1ee4 button.colab-df-convert');
+          document.querySelector('#df-9f474b81-c873-4b05-8bda-2c34d13835d8 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-cdc7493b-a49d-47c4-af29-497d52aa1ee4');
+          const element = document.querySelector('#df-9f474b81-c873-4b05-8bda-2c34d13835d8');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -656,9 +655,6 @@ Name: Kelas, dtype: int64
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="training-model">
 <h1>Training Model<a class="headerlink" href="#training-model" title="Permalink to this heading">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>Training Model<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from sklearn.tree import DecisionTreeClassifier</span>
@@ -709,6 +705,79 @@ Name: Kelas, dtype: int64
 <span class="ne">--&gt; </span><span class="mi">428</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="n">first_call</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">429</span>         <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">430</span>             <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">_check_sample_weight</span><span class="p">(</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">582</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">583</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">584</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+<span class="g g-Whitespace">    </span><span class="mi">586</span> 
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span> 
+<span class="ne">-&gt; </span><span class="mi">1106</span>     <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1107</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1108</span>         <span class="n">accept_sparse</span><span class="o">=</span><span class="n">accept_sparse</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">879</span>                     <span class="n">array</span> <span class="o">=</span> <span class="n">_asarray_with_order</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">xp</span><span class="o">=</span><span class="n">xp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>             <span class="k">except</span> <span class="n">ComplexWarning</span> <span class="k">as</span> <span class="n">complex_warning</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/_array_api.py</span> in <span class="ni">_asarray_with_order</span><span class="nt">(array, dtype, order, copy, xp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="k">if</span> <span class="n">xp</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;numpy.array_api&quot;</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>         <span class="c1"># Use NumPy API to support order</span>
+<span class="ne">--&gt; </span><span class="mi">185</span>         <span class="n">array</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>         <span class="k">return</span> <span class="n">xp</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/series.py</span> in <span class="ni">__array__</span><span class="nt">(self, dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>               <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">872</span><span class="s2">         return np.asarray(self._values, dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">873</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span><span class="s2">     # ----------------------------------------------------------------------</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;sistem rekomendasi aplikasi information filtering cari rekomendasi item informasi produk laya user dasar prediksi sifat personal teliti bahas sistem rekomendasi kuliner kabupaten bangkal sampang metode item based collaborative filtering metode dasar sama beri rating item item rating user dasar peneliltian hasil efektif metode item based collaborative filtering rekomendasi kuliner sesuai selera konsumen capai nilai kuat total responden&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+<span class="c1"># Buat pengklasifikasi KNN</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># Sesuaikan pengklasifikasi dengan data</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-10-682b2485deb2&gt;</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Sesuaikan pengklasifikasi dengan data</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/neighbors/_classification.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> 
+<span class="ne">--&gt; </span><span class="mi">215</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span> 
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/neighbors/_base.py</span> in <span class="ni">_fit</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_tags</span><span class="p">()[</span><span class="s2">&quot;requires_y&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span>             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">(</span><span class="n">KDTree</span><span class="p">,</span> <span class="n">BallTree</span><span class="p">,</span> <span class="n">NeighborsBase</span><span class="p">)):</span>
+<span class="ne">--&gt; </span><span class="mi">454</span>                 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span>                     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span>                 <span class="p">)</span>
 
 <span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">582</span>                 <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
@@ -1809,13 +1878,12 @@ Abstrak Skripsi: Setiap perusahaan mengharapkan adanya hubungan baik dengan pela
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Load Preprocessed Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Proses Klasifikasi</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data">Split Data</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction-tf-idf">Feature Extraction: TF-IDF</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oversampling-smote">Oversampling: SMOTE</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-model">Training Model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Training Model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#export-model">Export Model</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
