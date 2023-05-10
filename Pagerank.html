@@ -63,6 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Pagerank';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modelling Data Twitter" href="ModellingDataTwitter.html" />
     <link rel="prev" title="Proses Klasifikasi" href="Model/Klasifikasi_Abstrak.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas 8 (PAGERANK)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ModellingDataTwitter.html">Modelling Data Twitter</a></li>
 </ul>
 
     </div>
@@ -400,7 +402,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/174facc05ec327d9dcc35a3709a998f54f352ad71b81106b5f773ec8c01784e3.png" src="_images/174facc05ec327d9dcc35a3709a998f54f352ad71b81106b5f773ec8c01784e3.png" />
+<img alt="_images/da92f8ef4fe787ed99509a863f99bd28c4448568d11930af34b4bd78630d07e3.png" src="_images/da92f8ef4fe787ed99509a863f99bd28c4448568d11930af34b4bd78630d07e3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -516,7 +518,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/697238176d6d43916d8080a323811b27a005de660423bed32dd14711e5ece043.png" src="_images/697238176d6d43916d8080a323811b27a005de660423bed32dd14711e5ece043.png" />
+<img alt="_images/17b1b1acfe7caf449270fe580c5757cf1195f2ae99fe6e0b4f905db7ffa5ab81.png" src="_images/17b1b1acfe7caf449270fe580c5757cf1195f2ae99fe6e0b4f905db7ffa5ab81.png" />
 </div>
 </div>
 </div>
@@ -603,14 +605,12 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting PyPDF2
   Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/232.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">6.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">9.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: PyPDF2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed PyPDF2-3.0.1
+Successfully installed PyPDF2-3.0.1
 </pre></div>
 </div>
 </div>
@@ -623,7 +623,9 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting docx2txt
   Downloading docx2txt-0.8.tar.gz (2.8 kB)
 </pre></div>
 </div>
@@ -632,8 +634,8 @@ Building wheels for collected packages: docx2txt
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for docx2txt (setup.py) ... ?25l?25hdone
-  Created wheel for docx2txt: filename=docx2txt-0.8-py3-none-any.whl size=3977 sha256=a9a3c0342d0b140f30f6917843df2a669edc50dfd965dd4d692ec16034547c68
-  Stored in directory: /root/.cache/pip/wheels/40/75/01/e6c444034338bde9c7947d3467807f889123465c2371e77418
+  Created wheel for docx2txt: filename=docx2txt-0.8-py3-none-any.whl size=3957 sha256=250ddd69871209175843a375b85176b7b39a422ba4a912960b1f9691ec0e6495
+  Stored in directory: /root/.cache/pip/wheels/22/58/cf/093d0a6c3ecfdfc5f6ddd5524043b88e59a9a199cb02352966
 Successfully built docx2txt
 </pre></div>
 </div>
@@ -742,7 +744,7 @@ Successfully installed docx2txt-0.8
 <span class="g g-Whitespace">      </span><span class="mi">4</span> 
 <span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1"># now read the type of document</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
 <span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
 <span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
@@ -1011,6 +1013,15 @@ Successfully installed docx2txt-0.8
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Proses Klasifikasi</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="ModellingDataTwitter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modelling Data Twitter</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
